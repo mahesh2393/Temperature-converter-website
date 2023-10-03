@@ -1,0 +1,270 @@
+/* Temperature converter css */
+
+*{
+    /* to reset default browser css properties */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Narrow Bold', sans-serif;
+  }
+  
+  :root{
+    --largeHeading: 1.3rem;
+    --smallHeading: 0.9rem;
+    --lightColor: #9d2e2e;
+    --darkColor: #615454;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, #a3bbb5, #9390a9, #de7f9e);
+  }
+  
+  /* main content */
+  #content-container{
+    position: relative;
+    width: 290px;
+    margin: 0px auto;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #977fc9;
+    box-shadow: 0px 0px 5px rgb(19, 14, 14);
+  }
+  
+  /* Heading */
+  #container-heading{
+    margin: 0px auto 20px auto;
+    text-align: center;
+    font-size: var(--largeHeading);
+    font-weight: 540;
+  }
+  
+  /* calculations-container */
+  #calculations-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 15px 25px;
+    color: var(--darkColor);
+    font-size: var(--smallHeading);
+    background-color: #0a1120;
+    box-shadow: 0px 0px 3px #c59b9b;
+  }
+  
+  /* content division */
+  .content-division{
+    width: 100%;
+  }
+  
+  /* sub heading */
+  .division-heading{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--smallHeading);
+    font-weight: 550;
+    color: var(--lightColor);
+    padding: 0px 5px;
+    margin: 5px 0px 10px 0px;
+  }
+  
+  .division-heading::before{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: var(--lightColor);
+  }
+  
+  .division-heading::after{
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: var(--lightColor);
+  }
+  
+  /* inputs container */
+  .inputs-container{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 10px;
+  }
+  
+  /* input elements (input boxes, dropdowns, button) */
+  .inputs{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: var(--smallHeading);
+  }
+  
+  /* input fields and select dropdowns */
+  .input-field , .dropdown {
+    padding: 5px 10px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #d8cccc;
+    box-shadow: 0px 0px 5px #b48888;
+  }
+  
+  .dropdown, #convert-btn, footer a{
+    cursor: pointer;
+  }
+  
+  /* dropdown container */
+  .dropdown-container{
+    position: relative;
+  }
+  
+  .dropdown-container::after{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--smallHeading);
+    color: #a29435;
+    content: "\25bc";
+    pointer-events: none;
+  }
+  
+  /* dropdown */
+  .dropdown{
+    appearance: none;
+  }
+  
+  /* clickable input field */
+  #input-box{
+    transition: 0.2s;
+    box-shadow: 0px 0px 5px #956e6e, inset 0px 0px 0px #d8d4bd;
+  }
+  
+  #input-box:focus{
+    box-shadow: 0px 0px 5px #d5a7a7, inset 0px -4px 1px #cdcabc;
+  }
+  
+  /* disabled input field */
+  #result-box{
+    background-color: #aba874;
+  }
+  
+  /* button */
+  #convert-btn{
+    margin: 10px 0px;
+    padding: 10px;
+    color: var(--lightColor);
+    background-color: #3e6cb7;
+    box-shadow: 0px 0px 4px #847e6e;
+  }
+  
+  #convert-btn:hover{
+    background-color: #00bfff;
+  }
+  
+  #convert-btn:active{
+    background-color: #569c56;
+  }
+  
+  /* footer section */
+  footer{
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    font-size: 14px;
+    font-weight: 550;
+    color: var(--darkColor);
+    text-align: center;
+    padding: 15px 0px;
+  }
+  
+  /* footer link */
+  footer a{
+    text-decoration: none;
+    color: #949466;
+  }
+  
+  footer a:hover{
+    color: #34352f;
+  }
+  
+  
+  /* For large mobile devices */
+  @media(min-width: 481px){
+  
+    #content-container{
+      width: 360px;
+      padding: 25px 30px;
+    }
+  
+    #calculations-container{
+      padding: 20px 30px;
+    }
+  
+    .input-field , .dropdown {
+      padding: 7px 10px;
+  }
+  }
+  
+  /* For tablet devices */
+  @media(min-width: 768px){
+  
+    :root{
+      --largeHeading: 1.6rem;
+      --smallHeading: 1.1rem;
+    }
+  
+    #content-container{
+      width: 480px;
+      padding: 35px;
+    }
+  
+    #container-heading{
+      margin: 0px auto 25px auto;
+    }
+  
+    #calculation-container{
+      padding: 15px 40px;
+    }
+  
+    .division-heading::before{
+      width: 100px;
+      height: 1.7px;
+    }
+    
+    .division-heading::after{
+      width: 100px;
+      height: 1.7px;
+    }
+    
+  
+    .inputs-container{
+      display: grid;
+      grid-template-columns: 45% 45%;
+      justify-content: space-between;
+    }
+  
+    .inputs{
+      font-weight: 550;
+    }
+  
+    footer{
+      font-size: 16px;
+    }
+   }
